@@ -33,7 +33,7 @@ img {
   grid-template-columns: minmax(160px, 1fr) 3fr 300px;/* minmax define tamanha minimo maximo para os icones animais na lateral*/
   grid-template-areas:
     "header header header"
-    "sidenav content anucios"
+    "sidenav content anuncios"
     "footer footer footer"  
   ;
 }
@@ -135,6 +135,7 @@ img {
   border-radius: 5px;
   box-shadow: 5px 5px 8px 0px rgba(44, 44, 44, 0.15);
   transition: .1s ease-out;
+  3
 }
 
 .sidenav li a:hover {
@@ -169,7 +170,7 @@ img {
   .sidenav ul {
     display: flex;
   }
-  .sidenav ul li {
+  .sidenav  li {
     flex: 1 0 60px;
   }
   .sidenav {
@@ -214,7 +215,7 @@ img {
 
 /* ESTILOS CONTENT */
 
-P {
+p {
   font-size: 1.2em;
   line-height: 1.6;
   letter-spacing: -0.005em;
@@ -231,8 +232,6 @@ margin-top: 30px;
   color: #b07dfb;
 }
 
-/* CARACTERÍSTICAS */
-
 .titulo h1 {
   font-size: 3.75em;
   line-height: 1;
@@ -243,6 +242,8 @@ margin-top: 30px;
   font-size: 0.875em;
   font-style: italic;
 }
+
+/* CARACTERÍSTICAS */
 
 .caracteristicas {
   display: flex;
@@ -265,6 +266,8 @@ margin-top: 30px;
 
   .caracteristicas span{
   display: block;
+  color: #b07dfb;
+
 }
 
 .numero {
@@ -324,7 +327,8 @@ margin-top: 30px;
   display: grid;
   align-content: start;
   padding: 30px;
-  grid-gap: 30px
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px 1fr));
 }
 
 /* FOOTER */
