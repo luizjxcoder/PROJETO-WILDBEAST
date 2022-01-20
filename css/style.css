@@ -21,6 +21,7 @@ a {
 }
 
 img {
+  display: block;
   max-width: 100%;
   border-radius: 5px;
 }
@@ -103,17 +104,90 @@ img {
 
 .content {
   grid-area: content;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px ;
+}
+
+.col-wide {
+  grid-column: 1 / -1;
+}
+
+
+.imagem-1 {
+  grid-row: span 2; /* Expande a imgem pegando 2 linhas */
+  align-self: end;
+}
+
+.item-2 {
+  align-self: end;
+}
+
+/* ESTILOS CONTENT */
+
+P {
+  font-size: 1.2em;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: rgba(0, 0, 0, .7);
+}
+
+.informacoes p + p{
+margin-top: 30px;
+}
+
+/* TÍTULO */
+
+.titulo {
+  color: #b07dfb;
+}
+
+/* CARACTERÍSTICAS */
+
+.caracteristicas {
+  display: flex;
+}
+
+.caracteristicas > div { /* > fala diretamente com a div dentros de caracteristicas */
+  width: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+}
+
+.titulo h1 {
+  font-size: 3.75em;
+  line-height: 1;
+  font-size: 700;
+}
+
+.titulo span {
+  font-size: 0.875em;
+  font-style: italic;
 }
 
 /* ANÚNCIOS */
 
 .anuncios {
   grid-area: anuncios;
+  background: #fafbfc;
+  display: grid;
+  align-content: start;
+  padding: 30px;
+  grid-gap: 30px
 }
-
 
 /* FOOTER */
 
 .footer {
   grid-area: footer;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+}
+
+.footer p {
+  color: white;
+  text-align: center;
+  padding: 30px;
 }
