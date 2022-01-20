@@ -22,7 +22,7 @@ a {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -36,6 +36,32 @@ img {
     "sidenav content anucios"
     "footer footer footer"  
   ;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1200px) {
+  .estrutura {
+    grid-template-areas: 
+    "header header header"
+    "sidenav content content"
+    "sidenav anuncios anuncios"
+    "footer footer footer"
+    ;
+  }
+}
+
+@media (max-width: 760px) {
+  .estrutura {
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "header"
+    "sidenav"
+    "content"
+    "anuncios"
+    "footer"
+    ;
+  }
 }
 
 /* HEADER */
@@ -76,6 +102,21 @@ img {
   margin-left: 30px;
 }
 
+@media (max-width: 760px) {
+  .header {
+    grid-template-columns: auto;
+  }
+    .logo {
+      margin-bottom: 20px;
+    }
+    .header nav a {
+      font-size: 1em;
+    }
+    .header li + li {
+      margin-left: 10px;
+    }
+}
+
 /* SIDENAV */
 
 .sidenav {
@@ -100,6 +141,45 @@ img {
   background: #b07dfb;
 }
 
+@keyframes seta {
+  from {
+    right: 30px;
+  }
+  to {
+    right: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .sidenav {/* Insere uma barra de rolagem aos itens */
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  .sidenav::after{
+    content: " → ";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, .3);
+    animation: seta 0.5s ease-in 0s infinite alternate ;
+  }
+
+  .sidenav ul {
+    display: flex;
+  }
+  .sidenav ul li {
+    flex: 1 0 60px;
+  }
+  .sidenav {
+  padding: 0 30px;
+  }
+  .sidenav li a {
+    margin: 30px 30px 30px 0;
+  }
+}
+
 /* CONTENT */
 
 .content {
@@ -110,6 +190,12 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px ;
+}
+
+@media(max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
+  }
 }
 
 .col-wide {
@@ -147,16 +233,6 @@ margin-top: 30px;
 
 /* CARACTERÍSTICAS */
 
-.caracteristicas {
-  display: flex;
-}
-
-.caracteristicas > div { /* > fala diretamente com a div dentros de caracteristicas */
-  width: 80px;
-  text-align: center;
-  background: linear-gradient(135deg, #8844ee, #b07dfb);
-}
-
 .titulo h1 {
   font-size: 3.75em;
   line-height: 1;
@@ -166,6 +242,78 @@ margin-top: 30px;
 .titulo span {
   font-size: 0.875em;
   font-style: italic;
+}
+
+.caracteristicas {
+  display: flex;
+  align-items: flex-start; /* Alinha os itens kg e age abaixo do card */
+}
+
+
+.caracteristicas > div { /* > fala diretamente com a div dentros de caracteristicas */
+  width: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  border-radius: 5px;
+  box-shadow: 5px 5px 8px 0px rgba(44, 44, 44, 0.15);
+  position: relative;
+}
+
+.caracteristicas > div:first-child {
+  margin-right: 30px;
+}
+
+  .caracteristicas span{
+  display: block;
+}
+
+.numero {
+  color: #b07dfb;
+  font-size: 3em;
+  line-height: 1;
+  margin-top: 10px auto;
+}
+
+.rotulo {
+  background: white;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0;
+  position: relative;
+  top: 2px;
+}
+
+.destaque {
+  font-size: 0.875em;
+  color: #b07dfb;
+  max-width: 16em;
+}
+
+.citacao, .atributos {
+  align-self: start;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+}
+
+.citacao p {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  color: white;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.atributos li {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.125em;
+  padding: 15px;
+  color: white;
+}
+
+.atributos li + li {
+  border-top: 2px solid #b07dfb;
 }
 
 /* ANÚNCIOS */
